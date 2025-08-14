@@ -1,47 +1,21 @@
-import Foundation
+// RatePrompt.swift (фрагмент)
 import StoreKit
 import UIKit
 
 enum RatePrompt {
-    private static let tapKey = "StartMenu.Rate.TapCount"
-    /// Порог. Для теста ставь 10. В проде — 100.
-    private static let threshold = 10
+    private static var tapCount = 0
+    private static let threshold = 15
 
-    /// Регистрируем тап. `source` — откуда пришёл (native/web) для логов.
-    static func registerTap(source: String = "native") {
-        let d = UserDefaults.standard
-        var count = d.integer(forKey: tapKey)
-        count += 1
-        d.set(count, forKey: tapKey)
+    static func registerTap(source: String) {
+        tapCount += 1
+        print("[Rate] tap #\(tapCount) source=\(source)")
 
+        // Запрашиваем отзыв ТОЛЬКО из веба
+        guard source == "web", tapCount >= threshold else { return }
 
-        guard count >= threshold else { return }
-        // сбрасываем и просим показать системный промпт
-        d.set(0, forKey: tapKey)
-        requestReview()
-    }
-
-    private static func requestReview() {
-        DispatchQueue.main.async {
-            guard let scene = UIApplication.shared.connectedScenes
-                .compactMap({ $0 as? UIWindowScene })
-                .first(where: { $0.activationState == .foregroundActive }) else {
-                    return
-                }
+        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
             SKStoreReviewController.requestReview(in: scene)
         }
+        tapCount = 0
     }
-
-    /// (Опционально) Форс-открыть страницу отзывов в App Store — полезно в DEBUG,
-    /// если системное окно не показывается по внутренним правилам Apple.
-    static func debugOpenWriteReview() {
-        let appId = StartupConfig.appsFlyerAppID  // это и есть App Store numeric ID
-        if let url = URL(string: "itms-apps://itunes.apple.com/app/id\(appId)?action=write-review") {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        } else {
-        }
-    }
-
-    /// Для тестов: принудительный сброс счётчика.
-    static func resetCounter() { UserDefaults.standard.set(0, forKey: tapKey) }
 }

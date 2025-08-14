@@ -26,13 +26,13 @@ struct LaunchView: View {
             VStack(spacing: 16) {
                 ProgressView()
                     .scaleEffect(1.4)
-                if let desc = coordinator.descriptionText {
-                    Text(desc)
-                        .font(.footnote)
-                        .foregroundStyle(.secondary)
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal)
-                }
+//                if let desc = coordinator.descriptionText {
+//                    Text(desc)
+//                        .font(.footnote)
+//                        .foregroundStyle(.secondary)
+//                        .multilineTextAlignment(.center)
+//                        .padding(.horizontal)
+//                }
             }
             .padding()
         }

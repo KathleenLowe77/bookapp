@@ -14,7 +14,7 @@ struct ReadingCoachApp: App {
         WindowGroup {
             StartMenuFlowView {
                             RootTabsView()
-                    .enableRateAfterTaps() // ← your main UI
+//                    .enableRateAfterTaps() // ← your main UI
                         }
                 .environment(\.locale, Locale(identifier: appLanguage))
                 .preferredColorScheme(AppTheme(rawValue: appThemeRaw)?.colorScheme)
