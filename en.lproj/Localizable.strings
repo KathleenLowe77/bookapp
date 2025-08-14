@@ -1,0 +1,70 @@
+"Library" = "Library";
+"Add Book" = "Add Book";
+"Title or author" = "Title or author";
+"No Books Yet" = "No Books Yet";
+"Tap “Add Book” to start tracking your reading." = "Tap “Add Book” to start tracking your reading.";
+"Today's Goal" = "Today's Goal";
+"%d pages" = "%d pages";
+"of %d" = "of %d";
+
+"Book" = "Book";
+"Title" = "Title";
+"Author" = "Author";
+"Total pages" = "Total pages";
+"Reading Log" = "Reading Log";
+"No entries yet. Tap the + button in the top right." = "No entries yet. Tap the + button in the top right.";
+"Edit Book" = "Edit Book";
+"Delete Book" = "Delete Book";
+"Delete this book?" = "Delete this book?";
+"All reading entries for this book will be removed." = "All reading entries for this book will be removed.";
+"Cancel" = "Cancel";
+"Save" = "Save";
+"Log reading" = "Log reading";
+
+"Entry" = "Entry";
+"Pages read" = "Pages read";
+"Date" = "Date";
+"Hint" = "Hint";
+"Will be %d of %d pages (%d%%)" = "Will be %d of %d pages (%d%%)";
+
+"Settings" = "Settings";
+"Language" = "Language";
+"App language" = "App language";
+"Appearance" = "Appearance";
+"Theme" = "Theme";
+"System" = "System";
+"Light" = "Light";
+"Dark" = "Dark";
+
+"Daily Goal" = "Daily Goal";
+"No daily goal" = "No daily goal";
+"%d pages/day" = "%d pages/day";
+"Track how many pages you read each day." = "Track how many pages you read each day.";
+
+"Reminders" = "Reminders";
+"Daily motivational reminder at 12:00" = "Daily motivational reminder at 12:00";
+"Reschedule for tomorrow 12:00" = "Reschedule for tomorrow 12:00";
+"Notifications are disabled" = "Notifications are disabled";
+"Allow notifications in iOS Settings to receive daily reminders." = "Allow notifications in iOS Settings to receive daily reminders.";
+"Open Settings" = "Open Settings";
+"OK" = "OK";
+
+"Stats" = "Stats";
+"Range" = "Range";
+"Week" = "Week";
+"Month" = "Month";
+"No data yet" = "No data yet";
+"Log your reading to see charts." = "Log your reading to see charts.";
+
+"Notes" = "Notes";
+"No notes yet" = "No notes yet";
+"Edit notes" = "Edit notes";
+"Rating" = "Rating";
+"%d of %d stars" = "%d of %d stars";
+
+
+
+"%d of %d pages" = "%d of %d pages";
+"%d pages read" = "%d pages read";
+"%d of %d stars" = "%d of %d stars";
+

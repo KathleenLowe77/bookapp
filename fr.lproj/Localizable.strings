@@ -1,0 +1,69 @@
+"Library" = "Bibliothèque";
+"Add Book" = "Ajouter un livre";
+"Title or author" = "Titre ou auteur";
+"No Books Yet" = "Pas encore de livres";
+"Tap “Add Book” to start tracking your reading." = "Appuyez sur « Ajouter un livre » pour commencer le suivi.";
+
+"Today's Goal" = "Objectif du jour";
+"%d pages" = "%d pages";
+"of %d" = "sur %d";
+
+"Book" = "Livre";
+"Title" = "Titre";
+"Author" = "Auteur";
+"Total pages" = "Nombre total de pages";
+"Reading Log" = "Journal de lecture";
+"No entries yet. Tap the + button in the top right." = "Aucune entrée. Touchez le bouton + en haut à droite.";
+"Edit Book" = "Modifier le livre";
+"Delete Book" = "Supprimer le livre";
+"Delete this book?" = "Supprimer ce livre ?";
+"All reading entries for this book will be removed." = "Toutes les entrées de lecture pour ce livre seront supprimées.";
+"Cancel" = "Annuler";
+"Save" = "Enregistrer";
+"Log reading" = "Enregistrer la lecture";
+
+"Entry" = "Entrée";
+"Pages read" = "Pages lues";
+"Date" = "Date";
+"Hint" = "Astuce";
+"Will be %d of %d pages (%d%%)" = "Ce sera %d sur %d pages (%d%%)";
+
+"Settings" = "Réglages";
+"Language" = "Langue";
+"App language" = "Langue de l’app";
+"Appearance" = "Apparence";
+"Theme" = "Thème";
+"System" = "Système";
+"Light" = "Clair";
+"Dark" = "Sombre";
+
+"Daily Goal" = "Objectif quotidien";
+"No daily goal" = "Pas d’objectif";
+"%d pages/day" = "%d pages/jour";
+"Track how many pages you read each day." = "Suivez le nombre de pages lues chaque jour.";
+
+"Reminders" = "Rappels";
+"Daily motivational reminder at 12:00" = "Rappel de motivation quotidien à 12:00";
+"Reschedule for tomorrow 12:00" = "Reprogrammer pour demain 12:00";
+"Notifications are disabled" = "Notifications désactivées";
+"Allow notifications in iOS Settings to receive daily reminders." = "Autorisez les notifications dans Réglages iOS pour recevoir les rappels quotidiens.";
+"Open Settings" = "Ouvrir Réglages";
+"OK" = "OK";
+
+"Stats" = "Statistiques";
+"Range" = "Période";
+"Week" = "Semaine";
+"Month" = "Mois";
+"No data yet" = "Pas encore de données";
+"Log your reading to see charts." = "Enregistrez vos lectures pour voir les graphiques.";
+
+"Notes" = "Notes";
+"No notes yet" = "Pas encore de notes";
+"Edit notes" = "Modifier les notes";
+"Rating" = "Note";
+"%d of %d stars" = "%d sur %d étoiles";
+
+
+"%d of %d pages" = "%d sur %d pages";
+"%d pages read" = "%d pages lues";
+"%d of %d stars" = "%d sur %d étoiles";
