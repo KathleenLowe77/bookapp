@@ -58,8 +58,8 @@ struct SettingsView: View {
                 }
 
                 Section {
-                    Link("Privacy Policy", destination: URL(string: "https://example.com/privacy")!)
-                    Link("Support", destination: URL(string: "https://example.com/support")!)
+                    Link("Privacy Policy", destination: URL(string: "https://www.freeprivacypolicy.com/live/5d6cb695-b7f0-4be0-91f6-78b71cb1b9fe")!)
+                    Link("Support", destination: URL(string: "https://www.freeprivacypolicy.com/live/5d6cb695-b7f0-4be0-91f6-78b71cb1b9fe")!)
                 }
             }
             .navigationTitle("Settings")
