@@ -1,0 +1,21 @@
+# Xcode
+DerivedData/
+*.xcuserstate
+*.xccheckout
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcworkspace/xcuserdata/
+build/
+
+# SwiftPM
+.swiftpm/
+.build/
+SourcePackages/
+
+# macOS
+.DS_Store
+
+# Artifacts
+*.ipa
+*.dSYM
+*.dSYM.zip
+
