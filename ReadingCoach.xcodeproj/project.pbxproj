@@ -8,11 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8A8FB3952E4CB61500FBD110 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A8FB3932E4CB61500FBD110 /* Localizable.strings */; };
-		8A8FB3BB2E4CD0A000FBD110 /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = 8A8FB3BA2E4CD0A000FBD110 /* AppsFlyerLib */; };
-		8A8FB3BF2E4CD5E900FBD110 /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = 8A8FB3BE2E4CD5E900FBD110 /* OneSignalExtension */; };
-		8A8FB3C12E4CD5E900FBD110 /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 8A8FB3C02E4CD5E900FBD110 /* OneSignalFramework */; };
-		8A8FB3C32E4CD5E900FBD110 /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 8A8FB3C22E4CD5E900FBD110 /* OneSignalInAppMessages */; };
-		8A8FB3C52E4CD5E900FBD110 /* OneSignalLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 8A8FB3C42E4CD5E900FBD110 /* OneSignalLocation */; };
 		8A8FB3DE2E4E26FE00FBD110 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8A8FB3DD2E4E26F900FBD110 /* .gitignore */; };
 /* End PBXBuildFile section */
 
@@ -73,11 +68,6 @@
 			path = ReadingCoachUITests;
 			sourceTree = "<group>";
 		};
-		8A8FB39E2E4CC9F000FBD110 /* StartMenu */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = StartMenu;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,11 +75,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A8FB3BB2E4CD0A000FBD110 /* AppsFlyerLib in Frameworks */,
-				8A8FB3C52E4CD5E900FBD110 /* OneSignalLocation in Frameworks */,
-				8A8FB3C12E4CD5E900FBD110 /* OneSignalFramework in Frameworks */,
-				8A8FB3C32E4CD5E900FBD110 /* OneSignalInAppMessages in Frameworks */,
-				8A8FB3BF2E4CD5E900FBD110 /* OneSignalExtension in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				8A8FB3DD2E4E26F900FBD110 /* .gitignore */,
-				8A8FB39E2E4CC9F000FBD110 /* StartMenu */,
 				8A8FB3932E4CB61500FBD110 /* Localizable.strings */,
 				8A8FB3542E4CB2DC00FBD110 /* ReadingCoach */,
 				8A8FB3652E4CB2DD00FBD110 /* ReadingCoachTests */,
@@ -159,15 +143,9 @@
 			);
 			fileSystemSynchronizedGroups = (
 				8A8FB3542E4CB2DC00FBD110 /* ReadingCoach */,
-				8A8FB39E2E4CC9F000FBD110 /* StartMenu */,
 			);
 			name = ReadingCoach;
 			packageProductDependencies = (
-				8A8FB3BA2E4CD0A000FBD110 /* AppsFlyerLib */,
-				8A8FB3BE2E4CD5E900FBD110 /* OneSignalExtension */,
-				8A8FB3C02E4CD5E900FBD110 /* OneSignalFramework */,
-				8A8FB3C22E4CD5E900FBD110 /* OneSignalInAppMessages */,
-				8A8FB3C42E4CD5E900FBD110 /* OneSignalLocation */,
 			);
 			productName = ReadingCoach;
 			productReference = 8A8FB3522E4CB2DC00FBD110 /* ReadingCoach.app */;
@@ -254,8 +232,6 @@
 			mainGroup = 8A8FB3492E4CB2DC00FBD110;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				8A8FB3B92E4CD0A000FBD110 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
-				8A8FB3BC2E4CD39800FBD110 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8A8FB3532E4CB2DC00FBD110 /* Products */;
@@ -496,29 +472,33 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ReadingCoach/ReadingCoach.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"ReadingCoach/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReadingCoach/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Fluff Master Read";
+				INFOPLIST_KEY_CFBundleDisplayName = "Twitty Escape";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kathleenapps.masterread;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -529,29 +509,33 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ReadingCoach/ReadingCoach.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"ReadingCoach/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReadingCoach/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Fluff Master Read";
+				INFOPLIST_KEY_CFBundleDisplayName = "Twitty Escape";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kathleenapps.masterread;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -673,53 +657,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		8A8FB3B92E4CD0A000FBD110 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.17.2;
-			};
-		};
-		8A8FB3BC2E4CD39800FBD110 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/OneSignal/OneSignal-iOS-SDK";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.2.14;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		8A8FB3BA2E4CD0A000FBD110 /* AppsFlyerLib */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8A8FB3B92E4CD0A000FBD110 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
-			productName = AppsFlyerLib;
-		};
-		8A8FB3BE2E4CD5E900FBD110 /* OneSignalExtension */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8A8FB3BC2E4CD39800FBD110 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
-			productName = OneSignalExtension;
-		};
-		8A8FB3C02E4CD5E900FBD110 /* OneSignalFramework */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8A8FB3BC2E4CD39800FBD110 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
-			productName = OneSignalFramework;
-		};
-		8A8FB3C22E4CD5E900FBD110 /* OneSignalInAppMessages */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8A8FB3BC2E4CD39800FBD110 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
-			productName = OneSignalInAppMessages;
-		};
-		8A8FB3C42E4CD5E900FBD110 /* OneSignalLocation */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8A8FB3BC2E4CD39800FBD110 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
-			productName = OneSignalLocation;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8A8FB34A2E4CB2DC00FBD110 /* Project object */;
 }

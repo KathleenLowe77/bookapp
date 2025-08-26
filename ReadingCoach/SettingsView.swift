@@ -40,26 +40,26 @@ struct SettingsView: View {
                         .foregroundStyle(.secondary)
                 }
 
-                Section("Reminders") {
-                    Toggle("Daily motivational reminder at 12:00", isOn: $notificationsEnabled)
-                        .onChange(of: notificationsEnabled) { _, newValue in
-                            NotificationManager.shared.setEnabledWithPermission(newValue) { granted in
-                                if !granted {
-                                    // Вернём тумблер в Off и покажем подсказку
-                                    notificationsEnabled = false
-                                    showDeniedAlert = true
-                                }
-                            }
-                        }
-                    Button("Reschedule for tomorrow 12:00") {
-                        NotificationManager.shared.rescheduleNoon()
-                    }
-                    .disabled(!notificationsEnabled)
-                }
+//                Section("Reminders") {
+//                    Toggle("Daily motivational reminder at 12:00", isOn: $notificationsEnabled)
+//                        .onChange(of: notificationsEnabled) { _, newValue in
+//                            NotificationManager.shared.setEnabledWithPermission(newValue) { granted in
+//                                if !granted {
+//                                    // Вернём тумблер в Off и покажем подсказку
+//                                    notificationsEnabled = false
+//                                    showDeniedAlert = true
+//                                }
+//                            }
+//                        }
+//                    Button("Reschedule for tomorrow 12:00") {
+//                        NotificationManager.shared.rescheduleNoon()
+//                    }
+//                    .disabled(!notificationsEnabled)
+//                }
 
                 Section {
-                    Link("Privacy Policy", destination: URL(string: "https://www.freeprivacypolicy.com/live/5d6cb695-b7f0-4be0-91f6-78b71cb1b9fe")!)
-                    Link("Support", destination: URL(string: "https://www.freeprivacypolicy.com/live/5d6cb695-b7f0-4be0-91f6-78b71cb1b9fe")!)
+                    Link("Privacy Policy", destination: URL(string: "https://www.termsfeed.com/live/c2de7e32-8b09-471f-92f7-00bd836be565")!)
+                    Link("Support", destination: URL(string: "https://www.termsfeed.com/live/c2de7e32-8b09-471f-92f7-00bd836be565")!)
                 }
             }
             .navigationTitle("Settings")

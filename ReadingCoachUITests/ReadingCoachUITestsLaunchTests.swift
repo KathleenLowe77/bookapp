@@ -1,9 +1,5 @@
-//
-//  ReadingCoachUITestsLaunchTests.swift
-//  ReadingCoachUITests
-//
-//  Created by Vikentii on 13/8/25.
-//
+
+
 
 import XCTest
 

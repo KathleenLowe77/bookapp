@@ -1,9 +1,5 @@
 //
-//  ContentView.swift
-//  ReadingCoach
-//
-//  Created by Vikentii on 13/8/25.
-//
+
 
 import SwiftUI
 
