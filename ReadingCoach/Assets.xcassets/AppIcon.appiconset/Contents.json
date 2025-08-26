@@ -1,7 +1,6 @@
 {
   "images" : [
     {
-      "filename" : "Fluff Master Read.jpg",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -13,7 +12,6 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Fluff Master Read 1.jpg",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -25,7 +23,6 @@
           "value" : "tinted"
         }
       ],
-      "filename" : "Fluff Master Read 2.jpg",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
