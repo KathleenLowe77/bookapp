@@ -8,6 +8,8 @@ struct BookListView: View {
     @State private var showAdd = false
     @State private var search = ""
     @AppStorage("dailyGoal") private var dailyGoal: Int = 20
+    @AppStorage("appTheme") private var appThemeRaw: String = AppTheme.system.rawValue
+    private var appTheme: AppTheme { AppTheme(rawValue: appThemeRaw) ?? .system }
 
     private var filteredBooks: [Book] {
         guard !search.isEmpty else { return books }
@@ -67,6 +69,7 @@ struct BookListView: View {
                             .onDelete(perform: deleteBooks)
                         }
                         .listStyle(.insetGrouped)
+                        .scrollContentBackground(.hidden)
                     }
                 }
             }
@@ -88,6 +91,7 @@ struct BookListView: View {
             .navigationDestination(for: Book.self) { book in
                 BookDetailView(book: book)
             }
+            .background(appTheme.backgroundColor.ignoresSafeArea())
         }
     }
 
@@ -103,32 +107,40 @@ private struct BookRow: View {
     let book: Book
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            HStack {
-                Text(book.title).font(.headline)
-                if let author = book.author, !author.isEmpty {
-                    Text("· \(author)").foregroundStyle(.secondary)
+        ZStack {
+            VStack(alignment: .leading, spacing: 6) {
+                HStack {
+                    Text(book.title).font(.headline)
+                    if let author = book.author, !author.isEmpty {
+                        Text("· \(author)").foregroundStyle(.secondary)
+                    }
+                    Spacer()
+                    if book.totalPages > 0 {
+                        Text("\(Int(book.progress * 100))%")
+                            .font(.subheadline).monospacedDigit()
+                            .foregroundStyle(.secondary)
+                    }
                 }
-                Spacer()
-                if book.totalPages > 0 {
-                    Text("\(Int(book.progress * 100))%")
-                        .font(.subheadline).monospacedDigit()
-                        .foregroundStyle(.secondary)
+                ProgressView(value: book.progress)
+                HStack(spacing: 12) {
+                    Label("\(book.pagesRead) pages", systemImage: "book")
+                    if book.totalPages > 0 {
+                        Text("of \(book.totalPages)")
+                    }
+                    if let last = book.lastActivityDate {
+                        Label(last.formatted(date: .abbreviated, time: .omitted), systemImage: "clock")
+                    }
                 }
+                .font(.caption)
+                .foregroundStyle(.secondary)
             }
-            ProgressView(value: book.progress)
-            HStack(spacing: 12) {
-                Label("\(book.pagesRead) pages", systemImage: "book")
-                if book.totalPages > 0 {
-                    Text("of \(book.totalPages)")
-                }
-                if let last = book.lastActivityDate {
-                    Label(last.formatted(date: .abbreviated, time: .omitted), systemImage: "clock")
-                }
-            }
-            .font(.caption)
-            .foregroundStyle(.secondary)
+            .padding(.vertical, 8)
+            .padding(.horizontal, 6)
+            .background(
+                Color(UIColor.systemGray6)
+                    .opacity(UIScreen.main.traitCollection.userInterfaceStyle == .light ? 1 : 0)
+            )
+            .cornerRadius(12)
         }
-        .padding(.vertical, 4)
     }
 }

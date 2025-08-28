@@ -11,6 +11,8 @@ final class Book {
     // NEW:
     var rating: Int       // 0...5
     var notes: String     // free text
+    var isFavorite: Bool = false
+
 
     @Relationship(deleteRule: .cascade, inverse: \ReadingSession.book)
     var sessions: [ReadingSession]

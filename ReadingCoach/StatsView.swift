@@ -5,6 +5,8 @@ import Charts
 struct StatsView: View {
     @Query private var books: [Book]
     @State private var range: RangeType = .week
+    @AppStorage("appTheme") private var appThemeRaw: String = AppTheme.system.rawValue
+    private var appTheme: AppTheme { AppTheme(rawValue: appThemeRaw) ?? .system }
 
     enum RangeType: String, CaseIterable, Identifiable {
         case week = "Week"
@@ -53,6 +55,7 @@ struct StatsView: View {
                 Spacer(minLength: 0)
             }
             .navigationTitle("Stats")
+            .background(appTheme.backgroundColor.ignoresSafeArea())
         }
     }
 

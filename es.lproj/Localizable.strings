@@ -67,3 +67,6 @@
 "%d of %d pages" = "%d de %d páginas";
 "%d pages read" = "%d páginas leídas";
 "%d of %d stars" = "%d de %d estrellas";
+
+"InvalidNumberMessage" = "Por favor, introduzca solo números";
+"OK" = "OK";

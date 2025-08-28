@@ -12,10 +12,15 @@ struct RootTabsView: View {
                 .tabItem {
                     Label("Stats", systemImage: "chart.bar")
                 }
+            FavoritesView()
+                .tabItem {
+                    Label("Favorites", systemImage: "star.fill")
+                }
             SettingsView()
                 .tabItem {
                     Label("Settings", systemImage: "gearshape")
                 }
+            
         }
     }
 }

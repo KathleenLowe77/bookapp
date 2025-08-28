@@ -68,3 +68,6 @@
 "%d pages read" = "%d pages read";
 "%d of %d stars" = "%d of %d stars";
 
+
+"InvalidNumberMessage" = "Please enter numbers only";
+"OK" = "OK";

@@ -6,7 +6,7 @@ struct BookDetailView: View {
     @State private var showLog = false
     @State private var confirmDelete = false
 
-    @Bindable var book: Book
+    var book: Book
 
     var body: some View {
         List {
@@ -16,6 +16,10 @@ struct BookDetailView: View {
                     HStack {
                         Text(book.title)
                             .font(.title2.bold())
+                        if (book.isFavorite) {
+                            Image(systemName: "star.fill")
+                                .foregroundStyle(.yellow)
+                        }
                         Spacer()
                         if book.totalPages > 0 {
                             Text("\(Int(book.progress * 100))%")
@@ -134,6 +138,14 @@ struct BookDetailView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
+                    book.isFavorite.toggle()
+                    try? context.save()
+                } label: {
+                    Image(systemName: book.isFavorite ? "star.fill" : "star")
+                }
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
                     showLog = true
                 } label: {
                     Label("Log reading", systemImage: "plus.circle.fill")
@@ -160,13 +172,15 @@ struct BookDetailView: View {
 private struct EditBookForm: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
-    @Bindable var book: Book
+    var book: Book
 
     @State private var titleText: String = ""
     @State private var authorText: String = ""
     @State private var totalText: String = ""
     @State private var ratingValue: Int = 0
     @State private var notesText: String = ""
+    @State private var isFavorite: Bool = false
+    @State private var showInvalidNumberAlert = false
 
     var body: some View {
         Form {
@@ -175,6 +189,13 @@ private struct EditBookForm: View {
                 TextField("Author", text: $authorText)
                 TextField("Total pages", text: $totalText)
                     .keyboardType(.numberPad)
+                    .onChange(of: totalText) { newValue in
+                        if !newValue.isEmpty && Int(newValue) == nil {
+                            showInvalidNumberAlert = true
+                            totalText = newValue.filter { $0.isNumber }
+                        }
+                    }
+                Toggle("Favorite", isOn: $isFavorite)
             } header: {
                 Text("Book")
             }
@@ -192,10 +213,13 @@ private struct EditBookForm: View {
             Section {
                 TextEditor(text: $notesText)
                     .frame(minHeight: 140)
-                    .accessibilityLabel(Text("Notes"))
+                    .accessibilityLabel("Notes")
             } header: {
                 Text("Notes")
             }
+        }
+        .alert(NSLocalizedString("Введите, пожалуйста, цифры", comment: "Invalid number input"), isPresented: $showInvalidNumberAlert) {
+            Button("OK", role: .cancel) { showInvalidNumberAlert = false }
         }
         .navigationTitle("Edit Book")
         .toolbar {
@@ -212,6 +236,7 @@ private struct EditBookForm: View {
             totalText = book.totalPages > 0 ? "\(book.totalPages)" : ""
             ratingValue = book.rating
             notesText = book.notes
+            isFavorite = book.isFavorite
         }
     }
 
@@ -224,6 +249,7 @@ private struct EditBookForm: View {
         book.totalPages = Int(totalText) ?? 0
         book.rating = max(0, min(5, ratingValue))
         book.notes = notesText
+        book.isFavorite = isFavorite
 
         try? context.save()
         dismiss()
@@ -234,7 +260,7 @@ private struct EditBookForm: View {
 private struct NotesEditorView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
-    @Bindable var book: Book
+    var book: Book
     @State private var text = ""
 
     var body: some View {

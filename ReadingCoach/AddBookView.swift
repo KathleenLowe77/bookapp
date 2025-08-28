@@ -10,6 +10,7 @@ struct AddBookView: View {
     @State private var totalPages = ""
     @State private var rating: Int = 0
     @State private var notes: String = ""
+    @State private var showInvalidNumberAlert = false
 
     private var canSave: Bool {
         !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
@@ -25,6 +26,12 @@ struct AddBookView: View {
                         .textInputAutocapitalization(.words)
                     TextField("Total pages", text: $totalPages)
                         .keyboardType(.numberPad)
+                        .onChange(of: totalPages) { newValue in
+                            if !newValue.isEmpty && Int(newValue) == nil {
+                                showInvalidNumberAlert = true
+                                totalPages = newValue.filter { $0.isNumber }
+                            }
+                        }
                 }
                 Section("Rating") {
                     StarRatingView(rating: $rating)
@@ -32,6 +39,11 @@ struct AddBookView: View {
                 Section("Notes") {
                     TextEditor(text: $notes)
                         .frame(minHeight: 120)
+                }
+            }
+            .alert(NSLocalizedString("InvalidNumberMessage", comment: "Alert message when non-numeric input entered"), isPresented: $showInvalidNumberAlert) {
+                Button(NSLocalizedString("OK", comment: "OK button")) {
+                    showInvalidNumberAlert = false
                 }
             }
             .navigationTitle("Add Book")
